@@ -176,3 +176,109 @@ const users = [
 // const map = curry((fn, values) => values.map(fn))
 // console.log(map(getId, [{id: 1}]))
 // const getIds = map(getId)
+
+//5 Write a function which gets an array and an element abd returns an arran with this element at the end
+
+// const numbers = [1, 2]
+// const append = (arr, element) => {
+//     return [...arr, element]
+//     // spreading all elements of the array in the new array, copies arrays
+//     // arr.push(element)
+//     // .push modifies the old array
+//     return arr
+// }
+// const newNumbers = append(numbers, 3)
+// console.log(newNumbers)
+// // console.log(append(numbers), 3)
+
+//6 Write a function which can concatenate 2 arrays
+
+// const mergeArrays = (arr1, arr2) => {
+//     // arr1.push(...arr2);
+//     // return arr1
+//     // return arr1.concat(...arr2)
+//     // concat doesn't mutate an array
+//     return [...arr1, ...arr2]
+// }
+
+// const arr1 = [1]
+// const arr2 = [2, 3]
+// const result = mergeArrays(arr1, arr2)
+// console.log(result, arr1, arr2)
+
+//7 Check if user exists with user array at the top
+// idea is to check the property of an object within the array
+
+// const doesNameExist = (name, arr) => arr.some(element => element.name === name)
+// const doesNameExist = (name, arr) => {
+//     const element = arr.find(element => element.name === name)
+//     // element is an object, not an object
+//     return Boolean(element)
+
+//     const index = arr.findIndex(element => element.name === name)
+//     // element is an object, not an object
+//     return index > 0;
+// }
+
+// const doesNameExist = (name, users) => {
+//     let exists = false
+//     for (let i = 0; i < users.length; i++) {
+//         if (users[i].name === name) {
+//             exists = true
+//         }
+//     }
+//     return exists
+//  }
+
+// console.log(doesNameExist("John", users))
+// console.log(doesNameExist("Foo", users))
+
+//8 Remove all duplicates in the array
+
+// const uniqueArray = array => {
+//     return [...new Set(array)]
+//     // new set allows us to store new values in a unique way
+// }
+
+// const uniqueArray = array => {
+//     const result = []
+//     array.forEach(item => {
+//         if (!result.includes(item)) {
+//             result.push(item)
+//         }
+//     })
+//     return result;
+// }
+
+// const uniqueArray = array => {
+//     return array.reduce((acc, el) => {
+//         return acc.includes(el) ? acc : [...acc, el]
+//     }, [])
+// }
+
+// console.log(uniqueArray([1, 1, 2]))
+
+//9 Sort the array of numbers
+
+// const array = [3, 5, 1]
+// const result = array.sort((a, b) => a - b)
+// // you can sort properties inside of objects
+// // will mutate array
+// console.log(array, result)
+
+//sort by author
+// const books = [
+//     {name: "Potter", author: "Joanne Rowling"},
+//     {name: "Warcross", author: "Marie Lu"},
+//     {name: "Hunger", author: "Suzanne Collins"},
+// ]
+
+// books.sort((book1, book2) => {
+//     const authorLastName1 = book1.author.split(" ")[1]
+//     const authorLastName2 = book2.author.split(" ")[1]
+//     return authorLastName1 < authorLastName2 ? -1 : 1
+// })
+
+// console.log(books)
+
+// interview is a communication between several people
